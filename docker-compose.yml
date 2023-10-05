@@ -7,3 +7,11 @@ services:
       webapps:/usr/local/tomcat/webapps
     ports: 8080:8080
     restart: on-failure
+
+  compile:
+    build:
+      context: .
+      dockerfile: compile.Dockerfile
+    volumes:
+      webapps:/usr/local/tomcat/webapps
+    restart: on-failure
