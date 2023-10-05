@@ -1,6 +1,7 @@
 FROM maven:3.9.4-eclipse-temurin-8-alpine
 RUN apk update
 RUN apk add git
+RUN mkdir -p /usr/local/tomcat/webapps
 WORKDIR /tmp
 RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello
 WORKDIR /tmp/boxfuse-sample-java-war-hello
