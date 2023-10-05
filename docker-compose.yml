@@ -15,3 +15,6 @@ services:
     volumes:
       webapps:/usr/local/tomcat/webapps
     restart: on-failure
+
+volumes:
+    webapps:
