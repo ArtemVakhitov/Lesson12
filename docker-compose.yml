@@ -5,8 +5,8 @@ services:
     image: tomcat:jre8-alpine
     volumes:
       webapps:/usr/local/tomcat/webapps
-    ports: 8080:8080
     restart: on-failure
+# Don't declare depends_on because the worst that can happen before build is ready is a 404
 
   compile:
     build:
@@ -18,3 +18,4 @@ services:
 
 volumes:
     webapps:
+...
