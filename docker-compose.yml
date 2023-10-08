@@ -4,9 +4,9 @@ services:
   tomcat:
     image: tomcat:jre8-alpine
     volumes:
-      - type: volume
-      - source: webapps
-      - target: /usr/local/tomcat/webapps
+      - type: "volume"
+      - source: "webapps"
+      - target: "/usr/local/tomcat/webapps"
     restart: on-failure
     ports:
       - "8080:8080"
@@ -17,9 +17,9 @@ services:
       context: .
       dockerfile: compile.Dockerfile
     volumes:
-      - type: volume
-      - source: webapps
-      - target: /usr/local/tomcat/webapps
+      - type: "volume"
+      - source: "webapps"
+      - target: "/usr/local/tomcat/webapps"
     restart: on-failure
 
 volumes:
