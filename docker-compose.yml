@@ -9,7 +9,7 @@ services:
     ports: 8080:8080
 # Don't declare depends_on because the worst that can happen before build is ready is a 404
 
-  compile:
+  build:
     build:
       context: .
       dockerfile: compile.Dockerfile
