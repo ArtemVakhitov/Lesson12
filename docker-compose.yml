@@ -1,5 +1,5 @@
 ---
-version: "3"
+version: "3.7"
 services:
   tomcat:
     image: tomcat:jre8-alpine
