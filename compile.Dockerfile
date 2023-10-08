@@ -1,5 +1,5 @@
 FROM maven:3.9.4-eclipse-temurin-8-alpine
-RUN apk update
+# Don't update just in case to avoid incompatibilities
 RUN apk add git
 RUN mkdir -p /usr/local/tomcat/webapps
 WORKDIR /tmp
