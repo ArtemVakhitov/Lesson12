@@ -4,9 +4,12 @@ services:
   tomcat:
     image: tomcat:jre8-alpine
     volumes:
-      webapps:/usr/local/tomcat/webapps
+      - type: volume
+      - source: webapps
+      - target: /usr/local/tomcat/webapps
     restart: on-failure
-    ports: 8080:8080
+    ports:
+      - "8080:8080"
 # Don't declare depends_on because the worst that can happen before build is ready is a 404
 
   build:
@@ -14,7 +17,9 @@ services:
       context: .
       dockerfile: compile.Dockerfile
     volumes:
-      webapps:/usr/local/tomcat/webapps
+      - type: volume
+      - source: webapps
+      - target: /usr/local/tomcat/webapps
     restart: on-failure
 
 volumes:
