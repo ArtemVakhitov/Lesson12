@@ -10,7 +10,8 @@ services:
     restart: on-failure
     ports:
       - "8080:8080"
-# Don't declare depends_on because the worst that can happen before build is ready is a 404
+    networks:
+      - app
 
   build:
     build:
@@ -21,6 +22,18 @@ services:
         source: "webapps"
         target: "/usr/local/tomcat/webapps"
     restart: on-failure
+
+  db:
+    image: mysql/mysql-server:latest
+    restart: on-failure
+    ports:
+      - "3306:3306"
+    networks:
+      - app
+
+networks:
+  app:
+    driver: bridge
 
 volumes:
     webapps:
