@@ -23,13 +23,15 @@ services:
         target: "/usr/local/tomcat/webapps"
     restart: on-failure
 
-  # db:
-  #   image: mysql/mysql-server:latest
-  #   restart: on-failure
-  #   ports:
-  #     - "3306:3306"
-  #   networks:
-  #     - app
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 2hostdb
+      MYSQL_DATABASE: shephertz
+    networks:
+      - app
 
 networks:
   app:
