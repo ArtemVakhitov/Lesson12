@@ -16,7 +16,7 @@ services:
   build:
     build:
       context: .
-      dockerfile: compile.Dockerfile
+      dockerfile: build.Dockerfile
     volumes:
       - type: "volume"
         source: "webapps"
