@@ -1,6 +1,6 @@
 FROM maven:3.6.3-jdk-8
 # Don't update just in case to avoid incompatibilities
-RUN apt-get install git
+RUN apt-get install git -y
 RUN mkdir -p /usr/local/tomcat/webapps
 WORKDIR /tmp
 RUN git clone https://github.com/shephertz/App42PaaS-Java-MySQL-Sample.git
