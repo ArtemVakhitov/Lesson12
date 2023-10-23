@@ -1,4 +1,4 @@
-FROM maven:3.6.3-jdk8
+FROM maven:3.6.3-jdk-8
 # Don't update just in case to avoid incompatibilities
 RUN apk add git
 RUN mkdir -p /usr/local/tomcat/webapps
