@@ -23,13 +23,13 @@ services:
         target: "/usr/local/tomcat/webapps"
     restart: on-failure
 
-  db:
-    image: mysql/mysql-server:latest
-    restart: on-failure
-    ports:
-      - "3306:3306"
-    networks:
-      - app
+  # db:
+  #   image: mysql/mysql-server:latest
+  #   restart: on-failure
+  #   ports:
+  #     - "3306:3306"
+  #   networks:
+  #     - app
 
 networks:
   app:
