@@ -7,4 +7,4 @@ RUN git clone https://github.com/shephertz/App42PaaS-Java-MySQL-Sample.git
 WORKDIR /tmp/App42PaaS-Java-MySQL-Sample
 COPY Config.properties WebContent/Config.properties
 # If the container was restarted but app is already built, then do nothing
-CMD mvn package; cp target/App42PaaS-Java-MySQL-Sample-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps/
+CMD mvn clean; mvn install; cp target/App42PaaS-Java-MySQL-Sample-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps/
