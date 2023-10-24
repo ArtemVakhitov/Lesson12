@@ -6,4 +6,3 @@ RUN git clone https://github.com/shephertz/App42PaaS-Java-MySQL-Sample.git
 WORKDIR /tmp/App42PaaS-Java-MySQL-Sample
 COPY Config.properties WebContent/Config.properties
 CMD mvn clean; mvn install; cp target/App42PaaS-Java-MySQL-Sample-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps/
-# test comment
